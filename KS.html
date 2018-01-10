@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <head>
 	<title>Konstantin Stamov </title>
 	<style>
 		.content {
-			background-color: rgb(204, 242, 188);
+			background-color: rgb(204, 242, 188, .6);
 			width: 800px;
 			border-style: groove;
 			border-width: 15px;
@@ -35,7 +36,6 @@
 			text-align: center;
 			padding-bottom: 10px;
 		}
-
 		table {
 			padding-left: 20px;
 			padding-right: 20px;
@@ -53,6 +53,9 @@
 			display: block;
 			margin: auto;
 		}
+		td:hover {
+			background-color: pink;
+		}
 		#slideshow {
 			margin: 10px auto;
 			position: relative;
@@ -69,6 +72,10 @@
 			left: 10px;
 			right: 10px;
 			bottom: 10px;
+		}
+		body {
+			background-image: url(images/background.jpg);
+			background-size: 100%;
 		}
 	</style>
 </head>
@@ -168,6 +175,8 @@
   			$("#bandText").css( {"background-color": cellColorOff , "color": textColorOff } );
   			$(this).css("border-color", "rgb(172, 180, 193)");
 		});
+
+		//Slideshow
 		$("#slideshow > div:gt(0)").hide();
 
 		setInterval(function() {
