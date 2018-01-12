@@ -127,17 +127,17 @@
 		var cellColorOff = "white";
 		var borderColorOn = "red";
 		var table = $("#table");
-		var raws = $('#table tr').length;
-		for (var i = 0; i < raws; i++) {
-			$('#table td:even').on( "mouseover", function() {
-	  			$(this).closest("td").next().css( {"background-color": cellColorOn , "color": textColorOn } );
-	  			$(this).css("border-color", borderColorOn);
-			});
-			$('#table td:even').on( "mouseleave", function() {
-	  			$(this).closest("td").next().css( {"background-color": cellColorOff , "color": textColorOff } );
-	  			$(this).css("border-color", "rgb(172, 180, 193)");
-			});
-		};
+		//var raws = $('#table tr').length;
+		//for (var i = 0; i < raws; i++) {
+		$('#table td:even').on( "mouseover", function() {
+  			$(this).closest("td").next().css( {"background-color": cellColorOn , "color": textColorOn } );
+  			$(this).css("border-color", borderColorOn);
+		});
+		$('#table td:even').on( "mouseleave", function() {
+  			$(this).closest("td").next().css( {"background-color": cellColorOff , "color": textColorOff } );
+  			$(this).css("border-color", "rgb(172, 180, 193)");
+		});
+		//};
 		/*My passions in life
 		$("#passions").on( "mouseover", function() {
   			$("#passionsText").css( {"background-color": cellColorOn , "color": textColorOn } );
