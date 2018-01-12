@@ -5,7 +5,7 @@
 	<title>Konstantin Stamov </title>
 	<style>
 		.content {
-			background-color: rgba(204, 242, 188, .8);
+			background-color: rgb(204, 242, 188, .6);
 			width: 800px;
 			border-style: groove;
 			border-width: 15px;
@@ -95,7 +95,7 @@
 			</div>
 		<h1 id="myName">Konstantin Stamov</h1>
 		<p id="me">Project Manager | Height:180 | Zodiac sign: Cancer</p></div>
-		<table>
+		<table id="table">
 			<tr>
 				<td id="passions"><abbr title="My passions in life"><img src="images/passion.jpg" alt="Boy with a hearth" width="100px"></abbr></td>
 				<td id="passionsText"><h3>My passions in life are Wing Tsun and Coding</h3><p>Wing Tsun is a Chinese martial art. The stance is like a piece of bamboo, firm but flexible, rooted but yielding. This structure is used to either deflect external forces or redirect them.<br>I am a beginner in coding but I love the idea of talking to the machines.</p>
@@ -126,7 +126,19 @@
 		var cellColorOn = "rgb(116, 118, 124)";
 		var cellColorOff = "white";
 		var borderColorOn = "red";
-		//My passions in life
+		var table = $("#table");
+		var raws = $('#table tr').length;
+		for (var i = 0; i < raws; i++) {
+			$('#table td:even').on( "mouseover", function() {
+	  			$(this).closest("td").next().css( {"background-color": cellColorOn , "color": textColorOn } );
+	  			$(this).css("border-color", borderColorOn);
+			});
+			$('#table td:even').on( "mouseleave", function() {
+	  			$(this).closest("td").next().css( {"background-color": cellColorOff , "color": textColorOff } );
+	  			$(this).css("border-color", "rgb(172, 180, 193)");
+			});
+		};
+		/*My passions in life
 		$("#passions").on( "mouseover", function() {
   			$("#passionsText").css( {"background-color": cellColorOn , "color": textColorOn } );
   			$(this).css("border-color", borderColorOn);
@@ -134,12 +146,6 @@
 		$("#passions").on( "mouseleave", function() {
   			$("#passionsText").css( {"background-color": cellColorOff , "color": textColorOff } );
   			$(this).css("border-color", "rgb(172, 180, 193)");
-  			$("#passionsText").on( "mouseover", function() {
-  				$(this).css({"background-color": "pink"} )
-  			});
-  			$("#passionsText").on( "mouseleave", function() {
-  				$(this).css({"background-color": cellColorOff} )
-  			});
 		});
 
 		//My way to this point
@@ -150,12 +156,6 @@
 		$("#way").on( "mouseleave", function() {
   			$("#wayText").css( {"background-color": cellColorOff , "color": textColorOff } );
   			$(this).css("border-color", "rgb(172, 180, 193)");
-  			$("#wayText").on( "mouseover", function() {
-  				$(this).css({"background-color": "pink"} )
-  			});
-  			$("#wayText").on( "mouseleave", function() {
-  				$(this).css({"background-color": cellColorOff} )
-  			});
 		});
 
 		//My favourite programming language
@@ -166,12 +166,6 @@
 		$("#language").on( "mouseleave", function() {
   			$("#languageText").css( {"background-color": cellColorOff , "color": textColorOff } );
   			$(this).css("border-color", "rgb(172, 180, 193)");
-  			$("#languageText").on( "mouseover", function() {
-  				$(this).css({"background-color": "pink"} )
-  			});
-  			$("#languageText").on( "mouseleave", function() {
-  				$(this).css({"background-color": cellColorOff} )
-  			});
 		});
 
 		//My favourite movie
@@ -182,12 +176,6 @@
 		$("#movie").on( "mouseleave", function() {
   			$("#movieText").css( {"background-color": cellColorOff , "color": textColorOff } );
   			$(this).css("border-color", "rgb(172, 180, 193)");
-  			$("#movieText").on( "mouseover", function() {
-  				$(this).css({"background-color": "pink"} )
-  			});
-  			$("#movieText").on( "mouseleave", function() {
-  				$(this).css({"background-color": cellColorOff} )
-  			});
 		});
 
 		//My favourite band
@@ -198,14 +186,8 @@
 		$("#band").on( "mouseleave", function() {
   			$("#bandText").css( {"background-color": cellColorOff , "color": textColorOff } );
   			$(this).css("border-color", "rgb(172, 180, 193)");
-  			$("#bandText").on( "mouseover", function() {
-  				$(this).css({"background-color": "pink"} )
-  			});
-  			$("#bandText").on( "mouseleave", function() {
-  				$(this).css({"background-color": cellColorOff} )
-  			});
 		});
-
+*/
 		//Slideshow
 		$("#slideshow > div:gt(0)").hide();
 
